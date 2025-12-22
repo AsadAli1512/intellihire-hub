@@ -26,6 +26,12 @@ import Candidates from "./pages/Candidates";
 import CandidateDashboard from "./pages/dashboard/CandidateDashboard";
 import RecruiterDashboard from "./pages/dashboard/RecruiterDashboard";
 import AdminDashboard from "./pages/dashboard/AdminDashboard";
+import DashboardJobs from "./pages/dashboard/DashboardJobs";
+import DashboardApplications from "./pages/dashboard/DashboardApplications";
+import DashboardInterviews from "./pages/dashboard/DashboardInterviews";
+import DashboardPerformance from "./pages/dashboard/DashboardPerformance";
+import DashboardSettings from "./pages/dashboard/DashboardSettings";
+import DashboardProfile from "./pages/dashboard/DashboardProfile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -57,9 +63,29 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/post-job" element={<PostJob />} />
           <Route path="/candidates" element={<Candidates />} />
+          {/* Candidate Dashboard Routes */}
           <Route path="/dashboard" element={<CandidateDashboard />} />
+          <Route path="/dashboard/jobs" element={<DashboardJobs />} />
+          <Route path="/dashboard/applications" element={<DashboardApplications />} />
+          <Route path="/dashboard/interviews" element={<DashboardInterviews />} />
+          <Route path="/dashboard/performance" element={<DashboardPerformance />} />
+          <Route path="/dashboard/settings" element={<DashboardSettings />} />
+          <Route path="/dashboard/profile" element={<DashboardProfile />} />
+          {/* Recruiter Dashboard Routes */}
           <Route path="/recruiter" element={<RecruiterDashboard />} />
+          <Route path="/recruiter/jobs" element={<RecruiterDashboard />} />
+          <Route path="/recruiter/jobs/new" element={<PostJob />} />
+          <Route path="/recruiter/candidates" element={<Candidates />} />
+          <Route path="/recruiter/interviews" element={<DashboardInterviews />} />
+          <Route path="/recruiter/reports" element={<Reports />} />
+          <Route path="/recruiter/settings" element={<Settings />} />
+          {/* Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/users" element={<AdminDashboard />} />
+          <Route path="/admin/recruiters" element={<AdminDashboard />} />
+          <Route path="/admin/verification" element={<AdminDashboard />} />
+          <Route path="/admin/logs" element={<AdminDashboard />} />
+          <Route path="/admin/settings" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
