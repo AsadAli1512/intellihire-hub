@@ -39,6 +39,11 @@ import AdminVerification from "./pages/admin/AdminVerification";
 import AdminLogs from "./pages/admin/AdminLogs";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminRecruiters from "./pages/admin/AdminRecruiters";
+import RecruiterJobsList from "./pages/recruiter/RecruiterJobsList";
+import RecruiterInterviews from "./pages/recruiter/RecruiterInterviews";
+import RecruiterCandidates from "./pages/recruiter/RecruiterCandidates";
+import RecruiterReports from "./pages/recruiter/RecruiterReports";
+import RecruiterSettings from "./pages/recruiter/RecruiterSettings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -81,12 +86,13 @@ const App = () => (
             <Route path="/dashboard/profile" element={<DashboardProfile />} />
             {/* Recruiter Dashboard Routes */}
             <Route path="/recruiter" element={<RecruiterDashboard />} />
-            <Route path="/recruiter/jobs" element={<RecruiterDashboard />} />
+            <Route path="/recruiter/jobs" element={<RecruiterJobsList />} />
             <Route path="/recruiter/jobs/new" element={<PostJob />} />
-            <Route path="/recruiter/candidates" element={<Candidates />} />
-            <Route path="/recruiter/interviews" element={<DashboardInterviews />} />
-            <Route path="/recruiter/reports" element={<Reports />} />
-            <Route path="/recruiter/settings" element={<Settings />} />
+            <Route path="/recruiter/candidates" element={<RecruiterCandidates />} />
+            <Route path="/recruiter/interviews" element={<RecruiterInterviews />} />
+            <Route path="/recruiter/reports" element={<RecruiterReports />} />
+            <Route path="/recruiter/reports/:id" element={<Reports />} />
+            <Route path="/recruiter/settings" element={<RecruiterSettings />} />
             {/* Admin Dashboard Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
