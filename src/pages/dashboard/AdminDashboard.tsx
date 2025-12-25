@@ -17,8 +17,10 @@ import {
   CheckCircle2,
   XCircle,
   FileText,
-  Activity
+  Activity,
+  CreditCard
 } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const AdminDashboard = () => {
@@ -31,6 +33,7 @@ const AdminDashboard = () => {
     { icon: Users, label: "Users", href: "/admin/users" },
     { icon: Building2, label: "Recruiters", href: "/admin/recruiters" },
     { icon: Shield, label: "Verification", href: "/admin/verification" },
+    { icon: CreditCard, label: "Subscriptions", href: "/admin/subscriptions" },
     { icon: Activity, label: "Activity Logs", href: "/admin/logs" },
     { icon: Settings, label: "Settings", href: "/admin/settings" },
   ];
@@ -135,6 +138,7 @@ const AdminDashboard = () => {
             <h1 className="text-xl font-display font-semibold text-foreground">Admin Dashboard</h1>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <button className="relative p-2 hover:bg-secondary rounded-lg">
               <Bell className="w-5 h-5 text-muted-foreground" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-destructive rounded-full" />

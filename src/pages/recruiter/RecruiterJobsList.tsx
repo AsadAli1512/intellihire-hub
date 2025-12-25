@@ -28,6 +28,7 @@ import {
   MoreVertical,
   TrendingUp,
   Calendar,
+  CreditCard,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -44,6 +45,7 @@ const RecruiterJobsList = () => {
     { icon: Users, label: "Candidates", href: "/recruiter/candidates" },
     { icon: Video, label: "Interviews", href: "/recruiter/interviews" },
     { icon: BarChart3, label: "Reports", href: "/recruiter/reports" },
+    { icon: CreditCard, label: "Subscription", href: "/recruiter/subscriptions" },
     { icon: Settings, label: "Settings", href: "/recruiter/settings" },
   ];
 

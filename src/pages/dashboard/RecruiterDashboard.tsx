@@ -17,8 +17,10 @@ import {
   CheckCircle2,
   Eye,
   Calendar,
-  TrendingUp
+  TrendingUp,
+  CreditCard
 } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const RecruiterDashboard = () => {
@@ -32,6 +34,7 @@ const RecruiterDashboard = () => {
     { icon: Users, label: "Candidates", href: "/recruiter/candidates" },
     { icon: Video, label: "Interviews", href: "/recruiter/interviews" },
     { icon: BarChart3, label: "Reports", href: "/recruiter/reports" },
+    { icon: CreditCard, label: "Subscription", href: "/recruiter/subscriptions" },
     { icon: Settings, label: "Settings", href: "/recruiter/settings" },
   ];
 
@@ -146,6 +149,7 @@ const RecruiterDashboard = () => {
                 Post Job
               </Button>
             </Link>
+            <ThemeToggle />
             <button className="relative p-2 hover:bg-secondary rounded-lg">
               <Bell className="w-5 h-5 text-muted-foreground" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full" />

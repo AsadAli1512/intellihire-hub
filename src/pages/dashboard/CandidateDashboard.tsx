@@ -12,13 +12,13 @@ import {
   LogOut,
   Bell,
   Menu,
-  X,
   ChevronRight,
   Clock,
   CheckCircle2,
-  AlertCircle,
-  Calendar
+  Calendar,
+  User
 } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const CandidateDashboard = () => {
@@ -28,6 +28,7 @@ const CandidateDashboard = () => {
 
   const sidebarLinks = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
+    { icon: User, label: "My Profile", href: "/dashboard/profile" },
     { icon: Search, label: "Find Jobs", href: "/dashboard/jobs" },
     { icon: FileText, label: "Applications", href: "/dashboard/applications" },
     { icon: Video, label: "Interviews", href: "/dashboard/interviews" },
@@ -123,6 +124,7 @@ const CandidateDashboard = () => {
             <h1 className="text-xl font-display font-semibold text-foreground">Dashboard</h1>
           </div>
           <div className="flex items-center gap-4">
+            <ThemeToggle />
             <button className="relative p-2 hover:bg-secondary rounded-lg">
               <Bell className="w-5 h-5 text-muted-foreground" />
               <span className="absolute top-1 right-1 w-2 h-2 bg-accent rounded-full" />
