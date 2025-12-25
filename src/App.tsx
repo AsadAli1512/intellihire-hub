@@ -44,6 +44,15 @@ import RecruiterInterviews from "./pages/recruiter/RecruiterInterviews";
 import RecruiterCandidates from "./pages/recruiter/RecruiterCandidates";
 import RecruiterReports from "./pages/recruiter/RecruiterReports";
 import RecruiterSettings from "./pages/recruiter/RecruiterSettings";
+import RecruiterVerification from "./pages/recruiter/RecruiterVerification";
+import RecruiterPostJob from "./pages/recruiter/RecruiterPostJob";
+import RecruiterSubscriptions from "./pages/recruiter/RecruiterSubscriptions";
+import CandidateProfileSetup from "./pages/candidate/CandidateProfileSetup";
+import CandidateProfilePreview from "./pages/candidate/CandidateProfilePreview";
+import CandidateJobDetails from "./pages/candidate/CandidateJobDetails";
+import CandidateApplyJob from "./pages/candidate/CandidateApplyJob";
+import CandidateApplicationSuccess from "./pages/candidate/CandidateApplicationSuccess";
+import AdminSubscriptions from "./pages/admin/AdminSubscriptions";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -77,6 +86,19 @@ const App = () => (
             <Route path="/post-job" element={<PostJob />} />
             <Route path="/candidates" element={<Candidates />} />
             {/* Candidate Dashboard Routes */}
+            <Route path="/candidate" element={<CandidateDashboard />} />
+            <Route path="/candidate/profile" element={<DashboardProfile />} />
+            <Route path="/candidate/profile/setup" element={<CandidateProfileSetup />} />
+            <Route path="/candidate/profile/preview" element={<CandidateProfilePreview />} />
+            <Route path="/candidate/jobs" element={<DashboardJobs />} />
+            <Route path="/candidate/jobs/:id" element={<CandidateJobDetails />} />
+            <Route path="/candidate/jobs/:id/apply" element={<CandidateApplyJob />} />
+            <Route path="/candidate/application-success" element={<CandidateApplicationSuccess />} />
+            <Route path="/candidate/applications" element={<DashboardApplications />} />
+            <Route path="/candidate/interviews" element={<DashboardInterviews />} />
+            <Route path="/candidate/performance" element={<DashboardPerformance />} />
+            <Route path="/candidate/settings" element={<DashboardSettings />} />
+            {/* Legacy dashboard routes redirect to candidate */}
             <Route path="/dashboard" element={<CandidateDashboard />} />
             <Route path="/dashboard/jobs" element={<DashboardJobs />} />
             <Route path="/dashboard/applications" element={<DashboardApplications />} />
@@ -86,12 +108,15 @@ const App = () => (
             <Route path="/dashboard/profile" element={<DashboardProfile />} />
             {/* Recruiter Dashboard Routes */}
             <Route path="/recruiter" element={<RecruiterDashboard />} />
+            <Route path="/recruiter/verification" element={<RecruiterVerification />} />
             <Route path="/recruiter/jobs" element={<RecruiterJobsList />} />
-            <Route path="/recruiter/jobs/new" element={<PostJob />} />
+            <Route path="/recruiter/jobs/new" element={<RecruiterPostJob />} />
+            <Route path="/recruiter/jobs/edit/:id" element={<RecruiterPostJob />} />
             <Route path="/recruiter/candidates" element={<RecruiterCandidates />} />
             <Route path="/recruiter/interviews" element={<RecruiterInterviews />} />
             <Route path="/recruiter/reports" element={<RecruiterReports />} />
             <Route path="/recruiter/reports/:id" element={<Reports />} />
+            <Route path="/recruiter/subscriptions" element={<RecruiterSubscriptions />} />
             <Route path="/recruiter/settings" element={<RecruiterSettings />} />
             {/* Admin Dashboard Routes */}
             <Route path="/admin/login" element={<AdminLogin />} />
@@ -99,6 +124,7 @@ const App = () => (
             <Route path="/admin/users" element={<AdminUsers />} />
             <Route path="/admin/recruiters" element={<AdminRecruiters />} />
             <Route path="/admin/verification" element={<AdminVerification />} />
+            <Route path="/admin/subscriptions" element={<AdminSubscriptions />} />
             <Route path="/admin/logs" element={<AdminLogs />} />
             <Route path="/admin/settings" element={<AdminSettings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

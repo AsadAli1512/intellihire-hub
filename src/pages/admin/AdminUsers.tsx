@@ -21,7 +21,8 @@ import {
   Ban,
   Trash2,
   Eye,
-  Activity
+  Activity,
+  CreditCard
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -38,6 +39,7 @@ const AdminUsers = () => {
     { icon: Users, label: "All Users", href: "/admin/users" },
     { icon: Building2, label: "Recruiters", href: "/admin/recruiters" },
     { icon: Shield, label: "Verification", href: "/admin/verification" },
+    { icon: CreditCard, label: "Subscriptions", href: "/admin/subscriptions" },
     { icon: Activity, label: "Activity Logs", href: "/admin/logs" },
     { icon: Settings, label: "Settings", href: "/admin/settings" },
   ];
